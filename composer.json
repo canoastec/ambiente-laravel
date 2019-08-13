@@ -5,7 +5,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.6",
-		"illuminate/support": "*"
+		"illuminate/support": "*",
+		"illuminate/pagination": "*"
     },
     "autoload": {
         "psr-0": {
