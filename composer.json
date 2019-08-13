@@ -1,0 +1,18 @@
+{
+    "name": "canoastec/ambiente-laravel",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+		"illuminate/support": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "AmbienteLaravel": "src/"
+        },
+        "psr-4": {
+            "AmbienteLaravel\\": "src/"
+        }
+    }
+}
