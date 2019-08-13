@@ -15,5 +15,12 @@
         "psr-4": {
             "AmbienteLaravel\\": "src/"
         }
-    }
+    },
+	"extra": {
+		"laravel": {
+			"providers": [
+				"AmbienteLaravel\\ServiceProvider"
+			]
+		}
+	}
 }
