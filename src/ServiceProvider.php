@@ -4,13 +4,14 @@ namespace AmbienteLaravel;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 
 class ServiceProvider extends LaravelServiceProvider
 {
     public function register()
     {
-		if(env('APP_URL') {
-			$this->handlePaginationUrls()
+		if(env('APP_URL')) {
+			$this->handlePaginationUrls();
 		}
     }
 	
@@ -23,7 +24,7 @@ class ServiceProvider extends LaravelServiceProvider
 
     public function boot()
     {
-        if(env('APP_URL') {
+        if(env('APP_URL')) {
 			$this->handleBaseUrl();
 		}
     }
