@@ -14,7 +14,7 @@ class ServiceProvider extends LaravelServiceProvider
 			$this->handlePaginationUrls();
 		}
     }
-	
+
 	private function handlePaginationUrls()
 	{
 		Paginator::currentPathResolver(function () {
@@ -28,7 +28,7 @@ class ServiceProvider extends LaravelServiceProvider
 			$this->handleBaseUrl();
 		}
     }
-	
+
 	private function handleBaseUrl()
 	{
 		URL::forceRootUrl(env('APP_URL'));
