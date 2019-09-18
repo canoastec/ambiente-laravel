@@ -32,7 +32,11 @@ class ServiceProvider extends LaravelServiceProvider
 	private function handleBaseUrl()
 	{
 		URL::forceRootUrl(env('APP_URL'));
-		URL::forceScheme(str_contains(env('APP_URL'), 'https') ? 'https' : 'http');
+		if(!method_exists(url(), "forceSchema")){
+			URL::forceScheme(str_contains(env('APP_URL'), 'https') ? 'https' : 'http');
+			return;
+		}
+		URL::forceSchema(str_contains(env('APP_URL'), 'https') ? 'https' : 'http');
 	}
 }
 ?>
