@@ -4,6 +4,7 @@ namespace AmbienteLaravel;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 
 class ServiceProvider extends LaravelServiceProvider
@@ -32,7 +33,7 @@ class ServiceProvider extends LaravelServiceProvider
 	private function handleBaseUrl()
 	{
 		URL::forceRootUrl(env('APP_URL'));
-		if(!method_exists(url(), "forceSchema")){
+		if(!method_exists(app(UrlGenerator::class), "forceSchema")){
 			URL::forceScheme(str_contains(env('APP_URL'), 'https') ? 'https' : 'http');
 			return;
 		}
